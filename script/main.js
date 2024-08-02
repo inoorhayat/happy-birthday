@@ -24,6 +24,9 @@ const fetchData = () => {
     });
 };
 
+
+
+
 // Animation Timeline
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
@@ -34,15 +37,15 @@ const animationTimeline = () => {
     .split("")
     .join("</span><span>")}</span`;
 
-  hbd.innerHTML = `<span>${hbd.innerHTML
-    .split("")
-    .join("</span><span>")}</span`;
-
-  const ideaTextTrans = {
-    opacity: 0,
-    y: -20,
-    rotationX: 5,
-    skewX: "15deg"
+    hbd.innerHTML = `<span>${hbd.innerHTML
+      .split("")
+      .join("</span><span>")}</span`;
+      
+      const ideaTextTrans = {
+        opacity: 0,
+        y: -20,
+        rotationX: 5,
+        skewX: "15deg"
   };
 
   const ideaTextTransLeave = {
@@ -51,22 +54,22 @@ const animationTimeline = () => {
     rotationY: 5,
     skewX: "-15deg"
   };
-
+  
   const tl = new TimelineMax();
-
+  
   tl
-    .to(".container", 0.1, {
-      visibility: "visible"
-    })
-    .from(".one", 0.7, {
-      opacity: 0,
-      y: 10
-    })
-    .from(".two", 0.4, {
-      opacity: 0,
-      y: 10
-    })
-    .to(
+  .to(".container", 0.1, {
+    visibility: "visible"
+  })
+  .from(".one", 0.7, {
+    opacity: 0,
+    y: 10
+  })
+  .from(".two", 0.4, {
+    opacity: 0,
+    y: 10
+  })
+  .to(
       ".one",
       0.7,
       {
@@ -291,8 +294,8 @@ const animationTimeline = () => {
       },
       "+=1"
     );
-
-  // tl.seek("currentStep");
+    
+    // tl.seek("currentStep");
   // tl.timeScale(2);
 
   // Restart Animation on click
@@ -303,4 +306,17 @@ const animationTimeline = () => {
 };
 
 // Run fetch and animation in sequence
+
+// audio
+
+document.addEventListener('DOMContentLoaded', function() {
+  var audio = document.getElementById('myAudio');
+  if (audio) {
+    audio.load();
+  } else {
+    console.error('Audio element not found!');
+  }
+});
+
+
 fetchData();

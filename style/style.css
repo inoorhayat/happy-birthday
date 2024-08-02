@@ -9,6 +9,10 @@ body {
 
 }
 
+#myAudio{
+  visibility: hidden;
+}
+
 .container {
   height: 100vh;
   width: 100vh;
